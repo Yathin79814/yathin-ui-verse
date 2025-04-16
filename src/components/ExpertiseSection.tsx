@@ -9,6 +9,7 @@ import {
   Users
 } from 'lucide-react';
 import { Progress } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
 
 const expertiseAreas = [
   {
@@ -74,7 +75,10 @@ const ExpertiseSection = () => {
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-sm text-portfolio-accent">{skill.level}%</span>
                       </div>
-                      <Progress value={skill.level} className="h-2 bg-portfolio-secondary/30" indicatorClassName="bg-portfolio-accent" />
+                      <Progress 
+                        value={skill.level} 
+                        className={cn("h-2 bg-portfolio-secondary/30", "bg-portfolio-accent")} 
+                      />
                     </div>
                   ))}
                 </div>

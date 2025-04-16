@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -32,8 +31,11 @@ const Navbar = () => {
 
       sections.forEach((section, index) => {
         if (!section) return;
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        
+        // Cast Element to HTMLElement to access offsetTop property
+        const htmlSection = section as HTMLElement;
+        const sectionTop = htmlSection.offsetTop;
+        const sectionHeight = htmlSection.clientHeight;
         
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           setActiveSection(navLinks[index].name);
