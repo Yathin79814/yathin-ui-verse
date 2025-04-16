@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ResumeSection from "@/components/ExperienceSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import AchievementsSection from "@/components/AchievementsSection";
