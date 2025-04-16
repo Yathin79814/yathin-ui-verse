@@ -9,7 +9,7 @@ import {
   Wrench
 } from 'lucide-react';
 
-const ResumeSection = () => {
+const ExperienceSection = () => {
   const experiences = [
     {
       title: "Senior Under Officer",
@@ -164,4 +164,4 @@ const ResumeSection = () => {
   );
 };
 
-export default ResumeSection;
+export default ExperienceSection;
