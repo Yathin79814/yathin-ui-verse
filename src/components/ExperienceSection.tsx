@@ -15,7 +15,7 @@ const ExperienceSection = () => {
       title: "Senior Under Officer",
       organization: "National Cadet Corps (NCC)",
       duration: "2021 - Present",
-      description: "Leading a 52 cadets, organizing training sessions, and representing the institute at national-level camps and events.",
+      description: "Leading 52 cadets, organizing training sessions, and representing the institute at national-level camps and events.",
       icon: <Star className="w-6 h-6 text-portfolio-accent" />
     },
     {
