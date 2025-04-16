@@ -37,7 +37,7 @@ const HeroSection = () => {
             </div>
             
             <div className="absolute -left-4 bottom-10 bg-white p-3 rounded-full shadow-lg">
-              <div className="bg-portfolio-contrast text-white w-16 h-16 rounded-full flex items-center justify-center text-xs font-medium">
+              <div className="text-white w-16 h-16 rounded-full flex items-center justify-center text-xs font-medium bg-neutral-50">
                 AI<br />Specialist
               </div>
             </div>
