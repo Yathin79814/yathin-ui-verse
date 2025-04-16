@@ -4,7 +4,9 @@ import {
   Award,
   Star,
   ChevronRight,
-  Calendar
+  Calendar,
+  GraduationCap,
+  Wrench
 } from 'lucide-react';
 
 const ResumeSection = () => {
@@ -28,7 +30,8 @@ const ResumeSection = () => {
       organization: "@designpreneurss",
       duration: "2020 - Present",
       description: "Building a community of 35K+ followers focused on design and entrepreneurship, creating educational content, and mentoring aspiring designers.",
-      icon: <Award className="w-6 h-6 text-portfolio-accent" />
+      icon: <Award className="w-6 h-6 text-portfolio-accent font-bold" />,
+      highlight: true
     }
   ];
 
@@ -56,8 +59,11 @@ const ResumeSection = () => {
             
             <div className="space-y-8">
               {experiences.map((exp, index) => (
-                <div key={index} className="relative pl-8 border-l-2 border-portfolio-secondary">
-                  <div className="absolute -left-3 top-0 w-6 h-6 bg-white rounded-full border-2 border-portfolio-accent flex items-center justify-center">
+                <div 
+                  key={index} 
+                  className={`relative pl-8 border-l-2 ${exp.highlight ? 'border-portfolio-accent' : 'border-portfolio-secondary'}`}
+                >
+                  <div className={`absolute -left-3 top-0 w-6 h-6 ${exp.highlight ? 'bg-portfolio-accent text-white' : 'bg-white'} rounded-full border-2 border-portfolio-accent flex items-center justify-center`}>
                     {exp.icon}
                   </div>
                   
@@ -66,8 +72,13 @@ const ResumeSection = () => {
                     <span>{exp.duration}</span>
                   </div>
                   
-                  <h4 className="text-xl font-semibold">{exp.title}</h4>
-                  <p className="text-portfolio-accent mb-2">{exp.organization}</p>
+                  <h4 className={`text-xl font-semibold ${exp.highlight ? 'text-portfolio-accent' : ''}`}>
+                    {exp.title}
+                    {exp.highlight && <span className="ml-2 inline-block animate-pulse">★</span>}
+                  </h4>
+                  <p className={`${exp.highlight ? 'text-portfolio-accent font-medium' : 'text-portfolio-accent'} mb-2`}>
+                    {exp.organization}
+                  </p>
                   <p className="text-gray-600">{exp.description}</p>
                 </div>
               ))}
@@ -152,7 +163,5 @@ const ResumeSection = () => {
     </section>
   );
 };
-
-import { GraduationCap, Wrench } from 'lucide-react';
 
 export default ResumeSection;

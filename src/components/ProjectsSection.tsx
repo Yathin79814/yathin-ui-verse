@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -7,15 +6,6 @@ import { Badge } from "@/components/ui/badge";
 const projects = [
   {
     id: 1,
-    title: "AI-Powered Student Dashboard",
-    description: "A comprehensive dashboard for students with AI features for personalized learning recommendations.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop",
-    category: "ui-ux",
-    tools: ["Figma", "AI", "UI/UX"],
-    link: "#"
-  },
-  {
-    id: 2,
     title: "E-commerce Redesign",
     description: "Complete UX overhaul for a fashion e-commerce platform, focusing on improved conversion rates.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&auto=format&fit=crop",
@@ -24,19 +14,19 @@ const projects = [
     link: "#"
   },
   {
-    id: 3,
-    description: "Marketing campaign for HackAdThon event that reached over 1000 participants.",
+    id: 2,
     title: "HackAdThon Marketing Campaign",
+    description: "Marketing campaign for HackAdThon event that reached over 1000 participants.",
     image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&auto=format&fit=crop",
     category: "marketing",
     tools: ["Canva", "Social Media", "Strategy"],
     link: "#"
   },
   {
-    id: 4,
-    title: "College Event Management App",
-    description: "A mobile app design for managing college events and tracking participation.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop",
+    id: 3,
+    title: "Todo App Design",
+    description: "A clean, intuitive to-do application design focused on simplicity and productivity.",
+    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=800&auto=format&fit=crop",
     category: "ui-ux",
     tools: ["Figma", "Mobile Design", "UI/UX"],
     link: "#"
