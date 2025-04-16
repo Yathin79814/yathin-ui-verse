@@ -24,7 +24,25 @@ const HeroSection = () => {
           </div>
         </div>
         
-        
+        <div className="md:w-1/2 animate-fade-in">
+          <div className="relative">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-portfolio-secondary mx-auto overflow-hidden border-4 border-white shadow-xl">
+              <img src="/lovable-uploads/d6ec9903-1858-49bb-9693-ba805313eac1.png" alt="D. Yathin" className="w-full h-full object-cover" />
+            </div>
+            
+            <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg">
+              <div className="bg-portfolio-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-xs font-medium">
+                UI/UX<br />Designer
+              </div>
+            </div>
+            
+            <div className="absolute -left-4 bottom-10 bg-white p-3 rounded-full shadow-lg">
+              <div className="bg-portfolio-contrast text-white w-16 h-16 rounded-full flex items-center justify-center text-xs font-medium">
+                AI<br />Specialist
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
       <a href="#about" className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-label="Scroll down">
