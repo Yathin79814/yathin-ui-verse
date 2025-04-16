@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, Linkedin } from 'lucide-react';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -92,7 +92,7 @@ const ContactSection = () => {
               <h4 className="font-semibold mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://instagram.com/designpreneurss" 
+                  href="https://www.instagram.com/designpreneurss?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-white p-3 rounded-full shadow-md hover:bg-portfolio-accent hover:text-white transition-colors"
@@ -100,7 +100,7 @@ const ContactSection = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://linkedin.com/in/damalla-yathin-377797287" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-white p-3 rounded-full shadow-md hover:bg-portfolio-accent hover:text-white transition-colors"
@@ -108,12 +108,12 @@ const ContactSection = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="mailto:damallayathin030@gmail.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-white p-3 rounded-full shadow-md hover:bg-portfolio-accent hover:text-white transition-colors"
                 >
-                  <Github className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                 </a>
               </div>
             </div>
