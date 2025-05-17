@@ -26,7 +26,7 @@ const projects = [
     id: 3,
     title: "Todo App Design",
     description: "A clean, intuitive to-do application design focused on simplicity and productivity.",
-    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=800&auto=format&fit=crop",
+    image: "https://drive.google.com/file/d/14OWfevapPGJtAKFNNVkgyOwtduB0BCuF/view?usp=drive_link",
     category: "ui-ux",
     tools: ["Figma", "Mobile Design", "UI/UX"],
     link: "#"
