@@ -9,23 +9,23 @@ const ProjectModal = ({ project, onClose }) => {
                  bg-black/50 backdrop-blur-sm px-4"
       onClick={onClose}
     >
-      {/* ✅ Rectangular Popup Box */}
+      {/* Popup Box */}
       <div
-        className="bg-white w-full max-w-xl rounded-xl shadow-2xl 
+        className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl 
                    overflow-hidden relative animate-fade-in"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 
+          className="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 
                      p-2 rounded-full transition"
         >
-          <X className="w-4 h-4 text-gray-700" />
+          <X className="w-5 h-5 text-gray-700" />
         </button>
 
-        {/* ✅ Smaller Mockup Preview */}
-        <div className="w-full h-48 bg-gray-100">
+        {/* ================= TOP IMAGE ================= */}
+        <div className="w-full h-72 bg-gray-200">
           <img
             src={project.mockup}
             alt={project.title}
@@ -33,42 +33,49 @@ const ProjectModal = ({ project, onClose }) => {
           />
         </div>
 
-        {/* Content */}
-        <div className="p-6">
-          {/* Title */}
-          <h2 className="text-xl font-bold mb-2">
-            {project.title}
-          </h2>
+        {/* ================= BOTTOM GRID ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
 
-          {/* Description */}
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">
-            {project.description}
-          </p>
-
-          {/* Tools */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.tools.map((tool, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 text-xs bg-gray-100 rounded-full"
-              >
-                {tool}
-              </span>
-            ))}
-          </div>
-
-          {/* Presented To */}
-          <p className="text-xs text-gray-500 mb-4">
-            <span className="font-semibold">Presented To:</span>{" "}
-            {project.presentedTo}
-          </p>
-
-          {/* Review */}
-          <div className="bg-portfolio-secondary/20 p-4 rounded-lg">
-            <p className="italic text-gray-700 text-sm">
+          {/* LEFT: REVIEW */}
+          <div className="bg-portfolio-secondary/20 p-5 rounded-xl">
+            <h3 className="text-lg font-semibold mb-3">
+              Review / Feedback
+            </h3>
+            <p className="italic text-gray-700 leading-relaxed">
               “{project.review}”
             </p>
+
+            <p className="mt-3 text-sm text-gray-500">
+              — Presented To: {project.presentedTo}
+            </p>
           </div>
+
+          {/* RIGHT: SKILLS USED */}
+          <div className="bg-gray-50 p-5 rounded-xl">
+            <h3 className="text-lg font-semibold mb-3">
+              Skills & Tools Used
+            </h3>
+
+            <div className="flex flex-wrap gap-2">
+              {project.tools.map((tool, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 text-sm bg-white border rounded-full shadow-sm"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        {/* PROJECT TITLE (Optional) */}
+        <div className="px-6 pb-6">
+          <h2 className="text-xl font-bold">{project.title}</h2>
+          <p className="text-gray-600 text-sm mt-1">
+            {project.description}
+          </p>
         </div>
       </div>
     </div>
