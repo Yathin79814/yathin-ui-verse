@@ -1,26 +1,27 @@
 const tools = [
-  { logo: "/logos/Adobe_idLnet8cfu_1.png" },
-  { logo: "/logos/Canva_Logo_1.png" },
-  { logo: "/logos/CapCut_Logo_1.png" },
-  { logo: "/logos/ChatGPT_Logo_1.png" },
-  { logo: "/logos/Figma_Symbol_1.png" }
+  { logo: "/logos/1.png" }, // Adobe
+  { logo: "/logos/2.png" }, // Figma
+  { logo: "/logos/3.png" }, // ChatGPT
+  { logo: "/logos/4.png" }, // CapCut
+  { logo: "/logos/5.png" }  // Canva
 ];
 
 const ToolMarquee = () => {
   return (
-    <div className="mt-6">
-      {/* ✅ Clean Small Tool Icons Row */}
-      <div className="flex gap-4 items-center flex-wrap">
+    <div className="mt-8">
+      {/* Tools Row */}
+      <div className="flex gap-6 items-center flex-wrap">
         {tools.map((tool, index) => (
           <div
             key={index}
-            className="w-12 h-12 flex items-center justify-center 
-                       bg-white rounded-lg border shadow-sm"
+            className="w-14 h-14 flex items-center justify-center 
+                       bg-white rounded-xl shadow-sm border
+                       hover:scale-105 hover:shadow-md transition"
           >
             <img
               src={tool.logo}
-              alt="tool"
-              className="h-6 w-6 object-contain"
+              alt="tool-logo"
+              className="w-10 h-10 object-contain"
             />
           </div>
         ))}
