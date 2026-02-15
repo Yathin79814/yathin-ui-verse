@@ -10,7 +10,7 @@ const ToolMarquee = () => {
   return (
     <div className="mt-6 w-full">
       {/* ✅ Static Logo Row */}
-      <div className="flex gap-6 items-center flex-wrap">
+      <div className="flex gap-6 items-center flex-wrap justify-start md:justify-start">
         {tools.map((tool, index) => (
           <div
             key={index}
