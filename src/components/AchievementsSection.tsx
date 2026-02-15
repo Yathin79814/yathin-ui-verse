@@ -1,4 +1,11 @@
-import { Trophy, Medal, Award, Flag, Star } from "lucide-react";
+import {
+  Trophy,
+  Medal,
+  Award,
+  Flag,
+  Users,
+  Sparkles
+} from "lucide-react";
 
 const achievements = [
   {
@@ -6,7 +13,7 @@ const achievements = [
     title: "2nd Place — IBCN Innovation Event",
     description:
       "Secured 🥈 2nd place at the IBCN event by contributing creative content, visual storytelling, and AI-powered media production using tools like CapCut, Gemini, and ElevenLabs.",
-    icon: <Trophy className="w-10 h-10 text-white" />,
+    icon: <Medal className="w-10 h-10 text-white" />,
     year: "2025"
   },
   {
@@ -14,7 +21,7 @@ const achievements = [
     title: "HackAdThon Winner",
     description:
       "Won HackAdThon for outstanding creative marketing content and campaign execution, delivering impactful design solutions under competitive conditions.",
-    icon: <Award className="w-10 h-10 text-white" />,
+    icon: <Sparkles className="w-10 h-10 text-white" />,
     year: "2024"
   },
   {
@@ -27,18 +34,10 @@ const achievements = [
   },
   {
     id: 4,
-    title: "DeakinCyber Research Workshop Participant",
-    description:
-      "Attended the DeakinCyber HITM Workshop on Zero Trust Security in Energy Infrastructure, gaining exposure to advanced cybersecurity research and systems.",
-    icon: <Star className="w-10 h-10 text-white" />,
-    year: "2025"
-  },
-  {
-    id: 5,
     title: "Founder — @designpreneurss (35K+ Community)",
     description:
       "Built and grew a design-focused online community of 35K+ followers, creating educational UI/UX, Photoshop, and Canva content for aspiring designers.",
-    icon: <Medal className="w-10 h-10 text-white" />,
+    icon: <Users className="w-10 h-10 text-white" />,
     year: "2020 – Present"
   }
 ];
@@ -65,9 +64,11 @@ const AchievementsSection = () => {
                 <div className="text-sm text-portfolio-accent font-medium mb-1">
                   {achievement.year}
                 </div>
+
                 <h3 className="text-xl font-semibold mb-2">
                   {achievement.title}
                 </h3>
+
                 <p className="text-gray-600">{achievement.description}</p>
               </div>
             </div>
@@ -84,8 +85,8 @@ const AchievementsSection = () => {
             </h3>
             <p className="text-white/80 mb-6 max-w-2xl">
               I'm always open to exciting opportunities, collaborations, and
-              impactful design + AI projects.  
-              Feel free to reach out if you'd like to connect!
+              impactful design + AI projects. Feel free to reach out if you'd
+              like to connect!
             </p>
 
             <a
