@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -49,7 +48,12 @@
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading font-semibold text-portfolio-contrast;
   }
 }
@@ -58,16 +62,16 @@
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
   }
-  
+
   .section-title {
     @apply text-3xl md:text-4xl font-bold mb-8 relative inline-block;
   }
-  
+
   .section-title::after {
     content: '';
     @apply absolute left-0 -bottom-2 h-1 w-1/2 bg-portfolio-accent rounded-full;
   }
-  
+
   .btn-primary {
     @apply bg-portfolio-accent text-white font-medium py-2 px-6 rounded-md 
     hover:bg-portfolio-contrast transition-colors duration-300 inline-block;
@@ -88,6 +92,7 @@
   }
 }
 
+/* Scroll Animation */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -97,4 +102,21 @@
 .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ================================================= */
+/* ✅ Logo Marquee Animation (For Hero Tool Logos) */
+/* ================================================= */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 12s linear infinite;
 }
