@@ -8,20 +8,19 @@ const tools = [
 
 const ToolMarquee = () => {
   return (
-    <div className="mt-6 w-full">
-      {/* ✅ Static Logo Row */}
-      <div className="flex gap-6 items-center flex-wrap justify-start md:justify-start">
+    <div className="mt-6">
+      {/* ✅ Clean Small Tool Icons Row */}
+      <div className="flex gap-4 items-center flex-wrap">
         {tools.map((tool, index) => (
           <div
             key={index}
-            className="w-14 h-14 flex items-center justify-center 
-                       bg-white rounded-xl shadow-sm border 
-                       hover:shadow-md transition"
+            className="w-12 h-12 flex items-center justify-center 
+                       bg-white rounded-lg border shadow-sm"
           >
             <img
               src={tool.logo}
-              alt="tool-logo"
-              className="max-h-8 max-w-8 object-contain opacity-80 hover:opacity-100 transition"
+              alt="tool"
+              className="h-6 w-6 object-contain"
             />
           </div>
         ))}
