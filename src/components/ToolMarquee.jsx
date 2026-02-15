@@ -9,18 +9,16 @@ const tools = [
 const ToolMarquee = () => {
   return (
     <div className="overflow-hidden mt-8 w-full">
-      <div className="flex gap-10 whitespace-nowrap animate-marquee">
-        
-        {/* Duplicate for infinite smooth scroll */}
+      <div className="flex gap-10 whitespace-nowrap animate-marquee items-center">
         {[...tools, ...tools].map((tool, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-xl p-4 flex items-center justify-center hover:scale-110 transition-transform"
+            className="bg-white shadow-md rounded-2xl p-4 flex items-center justify-center"
           >
             <img
               src={tool.logo}
               alt="tool-logo"
-              className="w-10 h-10 object-contain grayscale hover:grayscale-0 transition"
+              className="w-14 h-14 object-contain"
             />
           </div>
         ))}
