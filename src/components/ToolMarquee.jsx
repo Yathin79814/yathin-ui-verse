@@ -8,18 +8,24 @@ const tools = [
 
 const ToolMarquee = () => {
   return (
-    <div className="overflow-hidden mt-8 w-full">
-      <div className="flex gap-10 animate-marquee items-center">
-        
-        {/* Duplicate logos for smooth infinite scroll */}
+    <div className="overflow-hidden mt-6 w-full">
+      <div className="flex gap-6 animate-marquee items-center">
+
         {[...tools, ...tools].map((tool, index) => (
-          <img
+          <div
             key={index}
-            src={tool.logo}
-            alt="tool-logo"
-            className="w-12 h-12 object-contain opacity-90 hover:opacity-100 transition"
-          />
+            className="w-14 h-14 flex items-center justify-center 
+                       bg-white rounded-xl shadow-sm border 
+                       hover:shadow-md transition"
+          >
+            <img
+              src={tool.logo}
+              alt="tool-logo"
+              className="max-h-8 max-w-8 object-contain"
+            />
+          </div>
         ))}
+
       </div>
     </div>
   );
