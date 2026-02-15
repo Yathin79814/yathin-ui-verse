@@ -8,16 +8,16 @@ const tools = [
 
 const ToolMarquee = () => {
   return (
-    <div className="overflow-hidden mt-6 w-full">
-      <div className="flex gap-6 animate-marquee items-center">
-        {[...tools, ...tools].map((tool, index) => (
+    <div className="mt-6 w-full">
+      {/* ✅ Static Logo Row */}
+      <div className="flex gap-6 items-center flex-wrap">
+        {tools.map((tool, index) => (
           <div
             key={index}
             className="w-14 h-14 flex items-center justify-center 
                        bg-white rounded-xl shadow-sm border 
                        hover:shadow-md transition"
           >
-            {/* ✅ Add opacity + hover here */}
             <img
               src={tool.logo}
               alt="tool-logo"
