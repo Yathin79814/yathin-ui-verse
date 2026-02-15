@@ -92,7 +92,10 @@
   }
 }
 
-/* Scroll Animation */
+/* ================================================= */
+/* ✅ Scroll Animation */
+/* ================================================= */
+
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -105,18 +108,20 @@
 }
 
 /* ================================================= */
-/* ✅ Logo Marquee Animation (For Hero Tool Logos) */
+/* ✅ Modal Fade Animation (For Project Overlay Popup) */
 /* ================================================= */
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.animate-marquee {
-  animation: marquee 12s linear infinite;
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out;
 }
