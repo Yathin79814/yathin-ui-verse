@@ -28,7 +28,7 @@ const HeroSection = () => {
               className="px-3 py-1 text-xs font-semibold rounded-full 
                          bg-green-100 text-green-700 border border-green-300"
             >
-              Open for Internships 🚀
+              Actively Looking for Roles 🔍
             </span>
           </div>
 
