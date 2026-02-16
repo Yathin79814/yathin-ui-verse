@@ -1,4 +1,0 @@
-
-git add .
-git commit -m "Added custom project image"
-git push origin main
