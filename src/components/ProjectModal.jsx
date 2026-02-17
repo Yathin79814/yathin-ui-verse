@@ -1,44 +1,66 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const ProjectModal = ({ project, onClose }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   if (!project) return null;
 
-  const hasMultipleImages = project.images.length > 1;
+  /* ✅ Slider State */
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
+  /* Reset slider when new project opens */
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [project]);
+
+  /* ESC Close */
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
+
+  /* Slider Controls */
+  const nextImage = () => {
     setCurrentIndex((prev) =>
       prev === project.images.length - 1 ? 0 : prev + 1
     );
   };
 
-  const prevSlide = () => {
+  const prevImage = () => {
     setCurrentIndex((prev) =>
       prev === 0 ? project.images.length - 1 : prev - 1
     );
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
 
-      {/* ✅ FULL PAGE BLUR BACKGROUND */}
+      {/* ✅ Full Website Blur Overlay */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-md"
         onClick={onClose}
       />
 
-      {/* ✅ MODAL BOX 75% SCREEN */}
-      <div className="relative z-50 w-[75%] max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-fade-in">
-
+      {/* ✅ Popup Container */}
+      <div
+        className="
+          relative z-50 
+          w-full max-w-5xl 
+          max-h-[90vh]
+          bg-white rounded-3xl 
+          shadow-2xl overflow-hidden
+          flex flex-col
+        "
+      >
         {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-5 right-5 bg-white p-2 rounded-full shadow-lg hover:scale-105 transition"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 text-gray-700" />
         </button>
 
         {/* ================= IMAGE SLIDER ================= */}
@@ -51,56 +73,67 @@ const ProjectModal = ({ project, onClose }) => {
             className="w-full h-full object-cover"
           />
 
-          {/* ✅ Arrows Only If Multiple Images */}
-          {hasMultipleImages && (
+          {/* ✅ Show Arrows Only If More Than 1 Image */}
+          {project.images.length > 1 && (
             <>
+              {/* Left Arrow */}
               <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg"
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 
+                  bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
               >
-                <ChevronLeft />
+                <ChevronLeft className="w-6 h-6" />
               </button>
 
+              {/* Right Arrow */}
               <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg"
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 
+                  bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
               >
-                <ChevronRight />
+                <ChevronRight className="w-6 h-6" />
               </button>
             </>
           )}
         </div>
 
-        {/* ================= PROJECT DETAILS ================= */}
-        <div className="p-10">
+        {/* ================= SCROLLABLE DETAILS ================= */}
+        <div className="p-8 overflow-y-auto">
 
           {/* Title */}
-          <h2 className="text-3xl font-bold mb-3">
+          <h2 className="text-3xl font-bold mb-3 text-portfolio-contrast">
             {project.title}
           </h2>
 
-          {/* Long Description */}
-          <p className="text-gray-600 leading-relaxed mb-6">
-            {project.fullDescription}
+          {/* Full Description */}
+          <p className="text-gray-600 leading-relaxed mb-6 text-base">
+            {project.description}
           </p>
 
           {/* Tools */}
-          <h3 className="font-semibold mb-2">Tools Used</h3>
+          <h3 className="font-semibold text-lg mb-2">
+            Tools Used:
+          </h3>
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tools.map((tool, index) => (
-              <Badge key={index} variant="outline">
+              <Badge
+                key={index}
+                className="px-4 py-1 bg-portfolio-secondary/20 text-portfolio-contrast"
+              >
                 {tool}
               </Badge>
             ))}
           </div>
 
           {/* Skills */}
-          <h3 className="font-semibold mb-2">Skills Applied</h3>
+          <h3 className="font-semibold text-lg mb-2">
+            Skills Applied:
+          </h3>
           <div className="flex flex-wrap gap-2">
             {project.skills.map((skill, index) => (
               <span
                 key={index}
-                className="px-3 py-1 text-sm bg-gray-100 rounded-full"
+                className="px-4 py-1 text-sm bg-gray-100 rounded-full"
               >
                 {skill}
               </span>
