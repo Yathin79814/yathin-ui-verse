@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================================================= */
+/* ✅ Base Theme Variables */
+/* ================================================= */
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -38,6 +42,10 @@
   }
 }
 
+/* ================================================= */
+/* ✅ Global Base Styling */
+/* ================================================= */
+
 @layer base {
   * {
     @apply border-border;
@@ -58,6 +66,10 @@
   }
 }
 
+/* ================================================= */
+/* ✅ Reusable Components */
+/* ================================================= */
+
 @layer components {
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
@@ -68,12 +80,12 @@
   }
 
   .section-title::after {
-    content: '';
+    content: "";
     @apply absolute left-0 -bottom-2 h-1 w-1/2 bg-portfolio-accent rounded-full;
   }
 
   .btn-primary {
-    @apply bg-portfolio-accent text-white font-medium py-2 px-6 rounded-md 
+    @apply bg-portfolio-accent text-white font-medium py-2 px-6 rounded-md
     hover:bg-portfolio-contrast transition-colors duration-300 inline-block;
   }
 
@@ -83,7 +95,7 @@
 
   .nav-link {
     @apply relative text-portfolio-text hover:text-portfolio-accent transition-colors duration-200
-    after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-portfolio-accent 
+    after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-portfolio-accent
     after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full;
   }
 
@@ -108,10 +120,10 @@
 }
 
 /* ================================================= */
-/* ✅ Modal Fade Animation (For Project Overlay Popup) */
+/* ✅ Modal Popup Animation (Premium Fade + Scale) */
 /* ================================================= */
 
-@keyframes fadeIn {
+@keyframes fadeInScale {
   from {
     opacity: 0;
     transform: scale(0.96);
@@ -122,6 +134,15 @@
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.25s ease-out;
+/* Apply this class to modal box */
+.animate-fadeInScale {
+  animation: fadeInScale 0.25s ease-out;
+}
+
+/* ================================================= */
+/* ✅ Optional Smooth Backdrop Blur Support */
+/* ================================================= */
+
+.backdrop-blur-strong {
+  backdrop-filter: blur(12px);
 }
