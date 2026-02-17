@@ -11,46 +11,54 @@ const projects = [
   {
     id: 1,
     title: "End-to-End Food Delivery App",
-    thumbnail: "/thumb-food.png",
-    images: ["/food-1.jpg", "/food-2.jpg"],
+
+    thumbnail: "/projects/thumb-food.png",
+    images: [
+      "/projects/food-1.jpg",
+      "/projects/food-2.jpg"
+    ],
 
     tools: ["Figma"],
     skills: ["UX Flow", "UI Design"],
 
     description: "Designed a complete mobile food ordering experience...",
-
     fullDescription:
-      "This project focuses on designing an end-to-end food delivery mobile application experience. I worked on the complete user journey — from browsing restaurants, selecting meals, adding items to cart, and completing checkout smoothly. The UI was designed with a modern clean layout, consistent spacing, and user-friendly navigation.",
+      "This project focuses on designing an end-to-end food delivery journey...",
   },
 
   {
     id: 2,
     title: "Task Manager Application",
-    thumbnail: "/thumb-task.png",
-    images: ["/task-1.jpg", "/task-2.jpg"],
+
+    thumbnail: "/projects/thumb-task.png",
+    images: [
+      "/projects/task-1.jpg",
+      "/projects/task-2.jpg"
+    ],
 
     tools: ["Figma"],
     skills: ["Prototyping", "Mobile UI"],
 
     description: "A productivity-focused task management UI design...",
-
     fullDescription:
-      "In this project, I designed a modern Task Manager mobile application interface focused on productivity and simplicity. The design includes task creation, priority-based workflows, and a clean dashboard layout. I explored both light and dark mode screens, ensuring accessibility and consistency.",
+      "In this project, I designed a modern Task Manager app...",
   },
 
   {
     id: 3,
     title: "Deploy Ready Portfolio Website",
-    thumbnail: "/thumb-portfolio.png",
-    images: ["/port-1.jpg"],
+
+    thumbnail: "/projects/thumb-portfolio.png",
+    images: [
+      "/projects/port-1.jpg"
+    ],
 
     tools: ["ChatGPT", "Lovable", "GitHub"],
     skills: ["Portfolio Design", "Deployment"],
 
     description: "Built and deployed a premium portfolio website...",
-
     fullDescription:
-      "This project is my personal portfolio website built to showcase my UI/UX work and design journey. I used ChatGPT for content structuring, Lovable for rapid UI building, and GitHub for deployment-ready hosting. The portfolio is responsive, modern, and recruiter-friendly.",
+      "This portfolio showcases my UI/UX projects and achievements...",
   },
 ];
 
