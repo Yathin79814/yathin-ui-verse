@@ -13,7 +13,7 @@ const projects = [
     title: "End-to-End Food Delivery App",
 
     thumbnail: "/thumb-food.png",
-    images: ["/food-1.jpg", "/food-2.jpg"],
+    images: ["/food-1.png", "/food-2.png"],
 
     tools: ["Figma"],
     skills: ["UX Flow", "UI Design"],
@@ -31,7 +31,7 @@ const projects = [
     title: "Task Manager Application",
 
     thumbnail: "/thumb-task.png",
-    images: ["/task-1.jpg", "/task-2.jpg"],
+    images: ["/task-1.png", "/task-2.png"],
 
     tools: ["Figma"],
     skills: ["Prototyping", "Mobile UI"],
@@ -49,7 +49,7 @@ const projects = [
     title: "Deploy Ready Portfolio Website",
 
     thumbnail: "/thumb-portfolio.png",
-    images: ["/port-1.jpg"],
+    images: ["/port-1.png"],
 
     tools: ["ChatGPT", "Lovable", "GitHub"],
     skills: ["Portfolio Design", "Deployment"],
