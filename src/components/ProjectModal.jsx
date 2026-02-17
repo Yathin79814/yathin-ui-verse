@@ -5,15 +5,29 @@ import { Badge } from "@/components/ui/badge";
 const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
-  /* ✅ Slider State */
+  // ✅ Slider State
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  /* Reset slider when new project opens */
+  // Reset index when opening new project
   useEffect(() => {
     setCurrentIndex(0);
   }, [project]);
 
-  /* ESC Close */
+  // ✅ Next Image
+  const nextImage = () => {
+    setCurrentIndex((prev) =>
+      prev === project.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  // ✅ Prev Image
+  const prevImage = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? project.images.length - 1 : prev - 1
+    );
+  };
+
+  // ✅ ESC Close
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key === "Escape") onClose();
@@ -21,19 +35,6 @@ const ProjectModal = ({ project, onClose }) => {
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
   }, [onClose]);
-
-  /* Slider Controls */
-  const nextImage = () => {
-    setCurrentIndex((prev) =>
-      prev === project.images.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? project.images.length - 1 : prev - 1
-    );
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
@@ -44,21 +45,13 @@ const ProjectModal = ({ project, onClose }) => {
         onClick={onClose}
       />
 
-      {/* ✅ Popup Container */}
-      <div
-        className="
-          relative z-50 
-          w-full max-w-5xl 
-          max-h-[90vh]
-          bg-white rounded-3xl 
-          shadow-2xl overflow-hidden
-          flex flex-col
-        "
-      >
+      {/* ✅ Popup Box */}
+      <div className="relative z-50 w-full max-w-5xl h-[85vh] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 bg-white p-2 rounded-full shadow-lg hover:scale-105 transition"
+          className="absolute top-5 right-5 bg-white/90 hover:bg-white p-2 rounded-full shadow-md z-50"
         >
           <X className="w-5 h-5 text-gray-700" />
         </button>
@@ -66,21 +59,20 @@ const ProjectModal = ({ project, onClose }) => {
         {/* ================= IMAGE SLIDER ================= */}
         <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
 
-          {/* Main Image */}
+          {/* Image */}
           <img
             src={project.images[currentIndex]}
             alt={project.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-all duration-500"
           />
 
-          {/* ✅ Show Arrows Only If More Than 1 Image */}
+          {/* ✅ Show Arrows ONLY if 2+ images */}
           {project.images.length > 1 && (
             <>
               {/* Left Arrow */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 
-                  bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -88,25 +80,29 @@ const ProjectModal = ({ project, onClose }) => {
               {/* Right Arrow */}
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 
-                  bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
+
+              {/* Slide Indicator */}
+              <p className="absolute bottom-3 right-5 text-sm bg-black/60 text-white px-3 py-1 rounded-full">
+                {currentIndex + 1} / {project.images.length}
+              </p>
             </>
           )}
         </div>
 
-        {/* ================= SCROLLABLE DETAILS ================= */}
-        <div className="p-8 overflow-y-auto">
+        {/* ================= DETAILS (Scrollable) ================= */}
+        <div className="flex-1 overflow-y-auto p-8">
 
           {/* Title */}
-          <h2 className="text-3xl font-bold mb-3 text-portfolio-contrast">
+          <h2 className="text-3xl font-bold mb-3">
             {project.title}
           </h2>
 
-          {/* Full Description */}
-          <p className="text-gray-600 leading-relaxed mb-6 text-base">
+          {/* Description */}
+          <p className="text-gray-600 leading-relaxed mb-6">
             {project.description}
           </p>
 
@@ -118,7 +114,7 @@ const ProjectModal = ({ project, onClose }) => {
             {project.tools.map((tool, index) => (
               <Badge
                 key={index}
-                className="px-4 py-1 bg-portfolio-secondary/20 text-portfolio-contrast"
+                className="bg-portfolio-secondary/20 text-portfolio-contrast px-4 py-1"
               >
                 {tool}
               </Badge>
