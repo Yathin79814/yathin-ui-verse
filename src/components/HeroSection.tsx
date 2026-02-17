@@ -46,21 +46,16 @@ const HeroSection = () => {
           </h1>
 
           {/* Title */}
-          <h2 className="text-2xl md:text-3xl font-medium text-portfolio-text mb-6 leading-snug">
-            UI/UX Designer <span className="text-portfolio-accent">&</span>{" "}
-            AI Contnent specialist
-          
+          <h2 className="text-2xl md:text-3xl font-medium text-portfolio-text mb-6">
+            UI/UX & Marketing Design Specialist
           </h2>
 
           {/* Description */}
-          <p className="text-lg text-gray-600 mb-10 leading-relaxed max-w-lg">
-            Computer Science student at{" "}
-            <span className="font-semibold text-portfolio-contrast">
-              IIITDM Kancheepuram
-            </span>{" "}
-            with a passion for AI, leadership, and creative problem-solving
-            through thoughtful design.
-          </p>
+          <p className="text-lg mb-8 leading-relaxed max-w-lg">
+  I design clean and user-focused digital experiences, combining UI/UX thinking 
+  with strong visual storytelling and marketing creativity. From app prototypes 
+  to winning design campaigns, I build interfaces that connect with people.
+</p>
 
           {/* Buttons Premium Hover */}
           <div className="flex flex-wrap gap-4">
