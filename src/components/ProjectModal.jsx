@@ -1,3 +1,5 @@
+console.log("🔥 MODAL UPDATED VERSION RUNNING");
+
 import { useState, useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
