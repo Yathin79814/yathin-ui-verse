@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -7,12 +7,6 @@ const ProjectModal = ({ project, onClose }) => {
 
   // ✅ Slider State
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // ✅ Lock Scroll
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => (document.body.style.overflow = "auto");
-  }, []);
 
   // ✅ Next / Prev Image Functions
   const nextImage = () => {
