@@ -11,31 +11,55 @@ const projects = [
   {
     id: 1,
     title: "End-to-End Food Delivery App",
+
     thumbnail: "/thumb-food.png",
     images: ["/food-1.jpg", "/food-2.jpg"],
+
     tools: ["Figma"],
     skills: ["UX Flow", "UI Design"],
-    description: "Designed complete food ordering journey..."
+
+    // ✅ Card Preview
+    description: "Designed a complete mobile food ordering experience...",
+
+    // ✅ Modal Full Detail
+    fullDescription:
+      "This project focuses on designing an end-to-end food delivery mobile application experience. I worked on the complete user journey — from browsing restaurants, selecting meals, adding items to cart, and completing checkout smoothly. The UI was designed with a modern clean layout, consistent spacing, and user-friendly navigation. The goal was to create an intuitive ordering flow that feels fast, simple, and visually engaging.",
   },
 
   {
     id: 2,
     title: "Task Manager Application",
+
     thumbnail: "/thumb-task.png",
     images: ["/task-1.jpg", "/task-2.jpg"],
+
     tools: ["Figma"],
     skills: ["Prototyping", "Mobile UI"],
-    description: "Designed productivity-focused task manager..."
+
+    // ✅ Card Preview
+    description: "A productivity-focused task management UI design...",
+
+    // ✅ Modal Full Detail
+    fullDescription:
+      "In this project, I designed a modern Task Manager mobile application interface focused on productivity and simplicity. The design includes task creation, priority-based workflows, and a clean dashboard layout. I explored both light and dark mode screens, ensuring strong contrast and accessibility. This project helped me strengthen my UI structuring, interaction design thinking, and building consistent design systems inside Figma.",
   },
 
   {
     id: 3,
     title: "Deploy Ready Portfolio Website",
+
     thumbnail: "/thumb-portfolio.png",
     images: ["/port-1.jpg"],
+
     tools: ["ChatGPT", "Lovable", "GitHub"],
     skills: ["Portfolio Design", "Deployment"],
-    description: "Built a deploy-ready premium portfolio..."
+
+    // ✅ Card Preview
+    description: "Built and deployed a premium portfolio website...",
+
+    // ✅ Modal Full Detail
+    fullDescription:
+      "This project is my personal portfolio website built to showcase my UI/UX work and design journey. I used ChatGPT for content structuring, Lovable for rapid UI building, and GitHub for deployment-ready hosting. The portfolio is fully responsive, modern, and recruiter-friendly. It highlights my projects, achievements, and skills in a clean premium layout while being easy to maintain and update.",
   },
 ];
 
@@ -45,12 +69,6 @@ const projects = [
 
 const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
-
-  /* ✅ Stop background scroll */
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => (document.body.style.overflow = "auto");
-  }, []);
 
   /* ✅ Close modal on ESC key */
   useEffect(() => {
@@ -63,14 +81,13 @@ const ProjectModal = ({ project, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-
-      {/* ✅ Background Blur Overlay */}
+      {/* Background Blur Overlay */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-md"
         onClick={onClose}
       ></div>
 
-      {/* ✅ Popup Box */}
+      {/* Popup Box */}
       <div
         className="
           relative z-50 
@@ -84,16 +101,12 @@ const ProjectModal = ({ project, onClose }) => {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="
-            absolute top-5 right-5 
-            bg-white/90 hover:bg-white 
-            p-2 rounded-full shadow-md
-          "
+          className="absolute top-5 right-5 bg-white/90 hover:bg-white p-2 rounded-full shadow-md"
         >
           <X className="w-5 h-5 text-gray-700" />
         </button>
 
-        {/* ================= IMAGE SECTION (16:9) ================= */}
+        {/* Image Section */}
         <div className="w-full aspect-video bg-gray-100 overflow-hidden">
           <img
             src={project.images[0]}
@@ -102,17 +115,16 @@ const ProjectModal = ({ project, onClose }) => {
           />
         </div>
 
-        {/* ================= DETAILS SECTION ================= */}
+        {/* Details Section */}
         <div className="p-8 overflow-y-auto h-full">
-
           {/* Title */}
           <h2 className="text-3xl font-bold mb-3 text-portfolio-contrast">
             {project.title}
           </h2>
 
-          {/* Description */}
-          <p className="text-gray-600 leading-relaxed mb-6">
-            {project.description}
+          {/* Full Description */}
+          <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+            {project.fullDescription}
           </p>
 
           {/* Tools */}
@@ -141,9 +153,9 @@ const ProjectModal = ({ project, onClose }) => {
             ))}
           </div>
 
-          {/* ✅ Second Image Only If Exists */}
+          {/* Second Image Preview */}
           {project.images.length > 1 && (
-            <div className="mt-8 rounded-xl overflow-hidden shadow-lg">
+            <div className="mt-10 rounded-xl overflow-hidden shadow-lg">
               <img
                 src={project.images[1]}
                 alt="Second Preview"
@@ -196,7 +208,7 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Content */}
+              {/* Card Content */}
               <div className="p-5">
                 <h3 className="text-lg font-semibold mb-2">
                   {project.title}
