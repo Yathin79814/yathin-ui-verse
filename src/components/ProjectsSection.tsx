@@ -11,37 +11,31 @@ const projects = [
   {
     id: 1,
     title: "End-to-End Food Delivery App",
-    description:
-      "Designed a complete food delivery experience from browsing to payment with clean UI screens and smooth user flow.",
-    thumbnail: "/projects/thumb-food.png",
-    images: ["/projects/food-1.jpg", "/projects/food-2.png"],
-    tools: ["Figma", "UX Research", "Wireframing"],
-    skills: ["User Journey Design", "Mobile UI", "Prototyping"],
+    thumbnail: "/thumb-food.png",
+    images: ["/food-1.jpg", "/food-2.jpg"],
+    tools: ["Figma"],
+    skills: ["UX Flow", "UI Design"],
+    description: "Designed complete food ordering journey..."
   },
 
   {
     id: 2,
     title: "Task Manager Application",
-    description:
-      "Created a productivity-focused task manager UI with light & dark modes, simple task creation and priority workflow.",
-    thumbnail: "/projects/thumb-task.png",
-    images: ["/projects/task-1.png", "/projects/task-2.png"],
-    tools: ["Figma", "UI Design", "Mobile App"],
-    skills: ["Interaction Design", "Design Systems", "App UX"],
+    thumbnail: "/thumb-task.png",
+    images: ["/task-1.jpg", "/task-2.jpg"],
+    tools: ["Figma"],
+    skills: ["Prototyping", "Mobile UI"],
+    description: "Designed productivity-focused task manager..."
   },
 
   {
     id: 3,
-    title: "Deploy-Ready Personal Portfolio",
-    description:
-      "Built a premium portfolio website using ChatGPT + Lovable with GitHub deployment-ready structure and clean modern UI.",
-    thumbnail: "/projects/thumb-portfolio.png",
-
-    // ✅ If only one image, keep only one
-    images: ["/projects/port-1.png"],
-
+    title: "Deploy Ready Portfolio Website",
+    thumbnail: "/thumb-portfolio.png",
+    images: ["/port-1.jpg"],
     tools: ["ChatGPT", "Lovable", "GitHub"],
-    skills: ["Web UI", "Deployment", "Modern Portfolio Design"],
+    skills: ["Portfolio Design", "Deployment"],
+    description: "Built a deploy-ready premium portfolio..."
   },
 ];
 
