@@ -42,7 +42,7 @@ const HeroSection = () => {
 
           {/* Name */}
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-5">
-            D. Yathin
+            YATHIN D
           </h1>
 
           {/* Title */}
@@ -123,7 +123,7 @@ const HeroSection = () => {
 
           {/* Avatar Image */}
           <img
-            src="/images/profile.png"
+            src="/images/profile.svg"
             alt="D. Yathin"
             className="relative z-10 w-[440px] md:w-[560px] 
             drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)] 
