@@ -36,7 +36,7 @@ const HeroSection = () => {
               bg-green-200/40 text-green-800 border border-green-300 
               shadow-md backdrop-blur-md"
             >
-              Actively Looking for Roles ✨
+              Open for Opportunities ✨
             </span>
           </div>
 
