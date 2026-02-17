@@ -14,7 +14,7 @@ const projects = [
     description:
       "Designed a complete food delivery experience from browsing to payment with clean UI screens and smooth user flow.",
     thumbnail: "/projects/thumb-food.png",
-    images: ["/projects/food-1.jpg", "/projects/food-2.jpg"],
+    images: ["/projects/food-1.jpg", "/projects/food-2.png"],
     tools: ["Figma", "UX Research", "Wireframing"],
     skills: ["User Journey Design", "Mobile UI", "Prototyping"],
   },
@@ -25,7 +25,7 @@ const projects = [
     description:
       "Created a productivity-focused task manager UI with light & dark modes, simple task creation and priority workflow.",
     thumbnail: "/projects/thumb-task.png",
-    images: ["/projects/task-1.jpg", "/projects/task-2.jpg"],
+    images: ["/projects/task-1.png", "/projects/task-2.png"],
     tools: ["Figma", "UI Design", "Mobile App"],
     skills: ["Interaction Design", "Design Systems", "App UX"],
   },
@@ -38,7 +38,7 @@ const projects = [
     thumbnail: "/projects/thumb-portfolio.png",
 
     // ✅ If only one image, keep only one
-    images: ["/projects/port-1.jpg"],
+    images: ["/projects/port-1.png"],
 
     tools: ["ChatGPT", "Lovable", "GitHub"],
     skills: ["Web UI", "Deployment", "Modern Portfolio Design"],
