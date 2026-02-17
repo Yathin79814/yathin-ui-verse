@@ -48,7 +48,8 @@ const HeroSection = () => {
           {/* Title */}
           <h2 className="text-2xl md:text-3xl font-medium text-portfolio-text mb-6 leading-snug">
             UI/UX Designer <span className="text-portfolio-accent">&</span>{" "}
-            Influencer
+            AI Contnent specialist
+          
           </h2>
 
           {/* Description */}
