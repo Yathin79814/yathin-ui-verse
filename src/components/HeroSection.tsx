@@ -47,8 +47,8 @@ const HeroSection = () => {
 
           {/* Title */}
           <h2 className="text-2xl md:text-3xl font-medium text-portfolio-text mb-6">
-            UI/UX & Marketing Design Specialist
-          </h2>
+  UI/UX <span className="text-portfolio-accent">&</span> Marketing Design Specialist
+</h2>
 
           {/* Description */}
           <p className="text-lg mb-8 leading-relaxed max-w-lg">
