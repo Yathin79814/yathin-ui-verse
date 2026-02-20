@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ExternalLink, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ProjectModal from "./ProjectModal";
+import { Badge } from "@/components/ui/badge";
 
 /* ========================================= */
 /* ✅ PROJECT DATA */
@@ -12,49 +12,168 @@ const projects = [
     id: 1,
     title: "End-to-End Food Delivery App",
 
-    thumbnail: "/projects/thumb-food.png",
-    images: ["/projects/food-1.jpg", "/projects/food-2.jpg"],
+    thumbnail: "/thumb-food.png",
+    images: ["/food-1.jpg", "/food-2.jpg"],
 
     tools: ["Figma"],
     skills: ["UX Flow", "UI Design"],
 
-    description: "Designed a complete food ordering journey...",
+    // ✅ Card Preview
+    description: "Designed a complete mobile food ordering experience...",
+
+    // ✅ Modal Full Detail
     fullDescription:
-      "This project focuses on designing an end-to-end food delivery mobile application experience. I worked on the full customer journey — browsing restaurants, selecting meals, cart flow, and checkout. The UI was built with clean spacing, modern visuals, and intuitive navigation.",
+      "This project focuses on designing an end-to-end food delivery mobile application experience. I worked on the complete user journey — from browsing restaurants, selecting meals, adding items to cart, and completing checkout smoothly. The UI was designed with a modern clean layout, consistent spacing, and user-friendly navigation. The goal was to create an intuitive ordering flow that feels fast, simple, and visually engaging.",
   },
 
   {
     id: 2,
     title: "Task Manager Application",
 
-    thumbnail: "/projects/thumb-task.png",
-    images: ["/projects/task-1.jpg", "/projects/task-2.jpg"],
+    thumbnail: "/thumb-task.png",
+    images: ["/task-1.jpg", "/task-2.jpg"],
 
     tools: ["Figma"],
     skills: ["Prototyping", "Mobile UI"],
 
-    description: "Designed a productivity-focused task manager UI...",
+    // ✅ Card Preview
+    description: "A productivity-focused task management UI design...",
+
+    // ✅ Modal Full Detail
     fullDescription:
-      "In this project, I designed a modern Task Manager app interface focused on productivity and simplicity. It includes priority workflows, clean dashboard layouts, and both light + dark mode screens with strong accessibility.",
+      "In this project, I designed a modern Task Manager mobile application interface focused on productivity and simplicity. The design includes task creation, priority-based workflows, and a clean dashboard layout. I explored both light and dark mode screens, ensuring strong contrast and accessibility. This project helped me strengthen my UI structuring, interaction design thinking, and building consistent design systems inside Figma.",
   },
 
   {
     id: 3,
     title: "Deploy Ready Portfolio Website",
 
-    thumbnail: "/projects/thumb-portfolio.png",
-    images: ["/projects/port-1.jpg"],
+    thumbnail: "/thumb-portfolio.png",
+    images: ["/port-1.jpg"],
 
     tools: ["ChatGPT", "Lovable", "GitHub"],
     skills: ["Portfolio Design", "Deployment"],
 
+    // ✅ Card Preview
     description: "Built and deployed a premium portfolio website...",
+
+    // ✅ Modal Full Detail
     fullDescription:
-      "This project is my personal portfolio built to showcase UI/UX work. I used ChatGPT for structuring content, Lovable for rapid UI building, and GitHub for deployment. The site is recruiter-friendly, responsive, and easy to maintain.",
+      "This project is my personal portfolio website built to showcase my UI/UX work and design journey. I used ChatGPT for content structuring, Lovable for rapid UI building, and GitHub for deployment-ready hosting. The portfolio is fully responsive, modern, and recruiter-friendly. It highlights my projects, achievements, and skills in a clean premium layout while being easy to maintain and update.",
   },
 ];
 
-export default function ProjectsSection() {
+/* ========================================= */
+/* ✅ PROJECT MODAL COMPONENT */
+/* ========================================= */
+
+const ProjectModal = ({ project, onClose }) => {
+  if (!project) return null;
+
+  /* ✅ Close modal on ESC key */
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+      {/* Background Blur Overlay */}
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-md"
+        onClick={onClose}
+      ></div>
+
+      {/* Popup Box */}
+      <div
+        className="
+          relative z-50 
+          w-full max-w-5xl 
+          h-[75vh]
+          bg-white rounded-3xl 
+          shadow-2xl overflow-hidden
+          animate-fadeInScale
+        "
+      >
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-5 right-5 bg-white/90 hover:bg-white p-2 rounded-full shadow-md"
+        >
+          <X className="w-5 h-5 text-gray-700" />
+        </button>
+
+        {/* Image Section */}
+        <div className="w-full aspect-video bg-gray-100 overflow-hidden">
+          <img
+            src={project.images[0]}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Details Section */}
+        <div className="p-8 overflow-y-auto h-full">
+          {/* Title */}
+          <h2 className="text-3xl font-bold mb-3 text-portfolio-contrast">
+            {project.title}
+          </h2>
+
+          {/* Full Description */}
+          <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+            {project.fullDescription}
+          </p>
+
+          {/* Tools */}
+          <h3 className="font-semibold text-lg mb-2">Tools Used:</h3>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.tools.map((tool, index) => (
+              <Badge
+                key={index}
+                className="bg-portfolio-secondary/20 text-portfolio-contrast px-4 py-1"
+              >
+                {tool}
+              </Badge>
+            ))}
+          </div>
+
+          {/* Skills */}
+          <h3 className="font-semibold text-lg mb-2">Skills Applied:</h3>
+          <div className="flex flex-wrap gap-2">
+            {project.skills.map((skill, index) => (
+              <span
+                key={index}
+                className="px-4 py-1 text-sm bg-gray-100 rounded-full"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+
+          {/* Second Image Preview */}
+          {project.images.length > 1 && (
+            <div className="mt-10 rounded-xl overflow-hidden shadow-lg">
+              <img
+                src={project.images[1]}
+                alt="Second Preview"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ========================================= */
+/* ✅ PROJECTS SECTION MAIN */
+/* ========================================= */
+
+const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
@@ -67,14 +186,14 @@ export default function ProjectsSection() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition"
+              className="group rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all"
             >
               {/* Thumbnail */}
               <div className="relative h-56 overflow-hidden">
                 <img
                   src={project.thumbnail}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
                 {/* Hover Button */}
@@ -110,4 +229,6 @@ export default function ProjectsSection() {
       </div>
     </section>
   );
-}
+};
+
+export default ProjectsSection;
