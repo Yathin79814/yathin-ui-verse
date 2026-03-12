@@ -46,16 +46,14 @@ const HeroSection = () => {
 
           {/* Title */}
           <h2 className="text-2xl md:text-3xl font-medium text-portfolio-text mb-6">
-            UI/UX <span className="text-portfolio-accent">&</span> Marketing Design Specialist
-          </h2>
-
-          {/* Description */}
-          <p className="text-lg mb-8 leading-relaxed max-w-lg">
-            I design clean and user-focused digital experiences, combining UI/UX thinking 
-            with strong visual storytelling and marketing creativity. From app prototypes 
-            to winning design campaigns, I build interfaces that connect with people.
-          </p>
-
+            AI Content Creator <span className="text-portfolio-accent">&</span> Social Media Marketing Specialist
+            </h2>
+            
+            <p className="text-lg mb-8 leading-relaxed max-w-lg">
+            I create high-performing digital content using AI tools and modern marketing strategies. 
+            From viral social media campaigns to AI-generated visuals and videos, I help brands grow 
+            their online presence and engage audiences effectively.
+            </p>
           {/* Buttons */}
           <div className="flex flex-wrap gap-4">
             <Button
