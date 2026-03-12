@@ -30,7 +30,6 @@ const HeroSection = () => {
               Hello, I'm
             </p>
 
-            {/* Premium Glass Badge */}
             <span
               className="px-4 py-1.5 text-xs font-semibold rounded-full 
               bg-green-200/40 text-green-800 border border-green-300 
@@ -47,17 +46,17 @@ const HeroSection = () => {
 
           {/* Title */}
           <h2 className="text-2xl md:text-3xl font-medium text-portfolio-text mb-6">
-  UI/UX <span className="text-portfolio-accent">&</span> Marketing Design Specialist
-</h2>
+            UI/UX <span className="text-portfolio-accent">&</span> Marketing Design Specialist
+          </h2>
 
           {/* Description */}
           <p className="text-lg mb-8 leading-relaxed max-w-lg">
-  I design clean and user-focused digital experiences, combining UI/UX thinking 
-  with strong visual storytelling and marketing creativity. From app prototypes 
-  to winning design campaigns, I build interfaces that connect with people.
-</p>
+            I design clean and user-focused digital experiences, combining UI/UX thinking 
+            with strong visual storytelling and marketing creativity. From app prototypes 
+            to winning design campaigns, I build interfaces that connect with people.
+          </p>
 
-          {/* Buttons Premium Hover */}
+          {/* Buttons */}
           <div className="flex flex-wrap gap-4">
             <Button
               className="bg-portfolio-accent hover:bg-portfolio-contrast 
@@ -74,7 +73,7 @@ const HeroSection = () => {
               hover:scale-[1.03] transition-all"
               asChild
             >
-              <a href="#resume">My Experience</a>
+              <a href="#experience">My Experience</a>
             </Button>
 
             {/* Resume Download */}
@@ -85,12 +84,9 @@ const HeroSection = () => {
               hover:scale-[1.03] transition-all"
               asChild
             >
-              <a
-            href="/resume.pdf"
-            >
-              Download Resume
-            </a>
-              
+              <a href="/resume.pdf" download="D_Yathin_Resume.pdf">
+                Download Resume
+              </a>
             </Button>
           </div>
 
@@ -103,7 +99,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* ================= RIGHT AVATAR PREMIUM ================= */}
+        {/* ================= RIGHT AVATAR ================= */}
         <div className="md:w-1/2 flex justify-center relative animate-fade-in">
 
           {/* Glow Rings Behind Avatar */}
@@ -115,7 +111,7 @@ const HeroSection = () => {
             bg-yellow-400/20 rounded-full blur-[120px] 
             bottom-10 left-10" />
 
-          {/* Floating Premium Sparkles */}
+          {/* Floating Sparkles */}
           <div className="absolute top-16 left-20 w-2 h-2 bg-white rounded-full animate-ping opacity-70"></div>
           <div className="absolute top-40 right-24 w-3 h-3 bg-portfolio-accent rounded-full animate-pulse opacity-80"></div>
           <div className="absolute bottom-24 left-32 w-2 h-2 bg-yellow-300 rounded-full animate-bounce opacity-80"></div>
@@ -128,15 +124,6 @@ const HeroSection = () => {
             drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)] 
             hover:scale-[1.02] transition-transform duration-500"
           />
-
-          {/* Floating UI Badge */}
-          <div className="absolute right-6 top-1/2 -translate-y-1/2 
-            bg-white/80 backdrop-blur-lg p-3 rounded-full shadow-xl">
-            <div className="bg-portfolio-accent text-white w-16 h-16 
-              rounded-full flex items-center justify-center text-xs font-semibold">
-              UI/UX <br /> Designer
-            </div>
-          </div>
         </div>
       </div>
 
