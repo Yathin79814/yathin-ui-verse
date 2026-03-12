@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ProjectModal from "./ProjectModal";
 
 /* ========================================= */
@@ -9,46 +8,28 @@ const projects = [
   {
     id: 1,
     title: "End-to-End Food Delivery App",
-
     images: ["/food-1.jpg", "/food-2.jpg"],
-
     tools: ["Figma"],
     skills: ["UX Flow", "UI Design"],
-
     description: "Designed a complete mobile food ordering experience...",
-
-    fullDescription:
-      "This project focuses on designing an end-to-end food delivery mobile application experience. I worked on the complete user journey — from browsing restaurants, selecting meals, adding items to cart, and completing checkout smoothly.",
   },
 
   {
     id: 2,
     title: "Task Manager Application",
-
     images: ["/task-1.jpg", "/task-2.jpg"],
-
     tools: ["Figma"],
     skills: ["Prototyping", "Mobile UI"],
-
     description: "A productivity-focused task management UI design...",
-
-    fullDescription:
-      "In this project, I designed a modern Task Manager mobile application interface focused on productivity and simplicity.",
   },
 
   {
     id: 3,
     title: "Deploy Ready Portfolio Website",
-
     images: ["/port-1.jpg"],
-
     tools: ["ChatGPT", "Lovable", "GitHub"],
     skills: ["Portfolio Design", "Deployment"],
-
     description: "Built and deployed a premium portfolio website...",
-
-    fullDescription:
-      "This project is my personal portfolio website built to showcase my UI/UX work and design journey.",
   },
 ];
 
@@ -57,8 +38,6 @@ const projects = [
 /* ========================================= */
 
 const ProjectsSection = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="section-container">
@@ -70,12 +49,12 @@ const ProjectsSection = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              onClick={() => setSelectedProject(project)}
               className="
                 rounded-xl overflow-hidden
                 bg-white shadow-lg
-                hover:shadow-xl transition
-                cursor-pointer
+                hover:shadow-xl
+                hover:scale-[1.02]
+                transition
               "
             >
               {/* Image */}
@@ -102,12 +81,6 @@ const ProjectsSection = () => {
           ))}
 
         </div>
-
-        {/* Modal */}
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
 
       </div>
     </section>
