@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -8,6 +8,15 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   const hasMultipleImages = project.images.length > 1;
+
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) =>
@@ -22,48 +31,46 @@ const ProjectModal = ({ project, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center px-4">
 
-      {/* ✅ FULL PAGE BLUR BACKGROUND */}
+      {/* Blur Background */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-md"
         onClick={onClose}
       />
 
-      {/* ✅ MODAL BOX 75% SCREEN */}
-      <div className="relative z-50 w-[75%] max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-fade-in">
+      {/* Modal */}
+      <div className="relative z-50 w-full max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden">
 
-        {/* Close Button */}
+        {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 bg-white p-2 rounded-full shadow-lg hover:scale-105 transition"
+          className="absolute top-5 right-5 bg-white p-2 rounded-full shadow-lg"
         >
           <X className="w-5 h-5" />
         </button>
 
-        {/* ================= IMAGE SLIDER ================= */}
-        <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
+        {/* Image Slider */}
+        <div className="relative w-full aspect-video bg-gray-100">
 
-          {/* Main Image */}
           <img
             src={project.images[currentIndex]}
             alt={project.title}
             className="w-full h-full object-cover"
           />
 
-          {/* ✅ Arrows Only If Multiple Images */}
           {hasMultipleImages && (
             <>
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow"
               >
                 <ChevronLeft />
               </button>
 
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow"
               >
                 <ChevronRight />
               </button>
@@ -71,15 +78,13 @@ const ProjectModal = ({ project, onClose }) => {
           )}
         </div>
 
-        {/* ================= PROJECT DETAILS ================= */}
+        {/* Content */}
         <div className="p-10">
 
-          {/* Title */}
-          <h2 className="text-3xl font-bold mb-3">
+          <h2 className="text-3xl font-bold mb-4">
             {project.title}
           </h2>
 
-          {/* Long Description */}
           <p className="text-gray-600 leading-relaxed mb-6">
             {project.fullDescription}
           </p>
@@ -106,6 +111,7 @@ const ProjectModal = ({ project, onClose }) => {
               </span>
             ))}
           </div>
+
         </div>
       </div>
     </div>
