@@ -80,7 +80,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="resume" className="py-20 bg-portfolio-background">
+    <section id="experience" className="py-20 bg-portfolio-background">
       <div className="section-container">
         <h2 className="section-title">My Experience</h2>
 
