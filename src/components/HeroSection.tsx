@@ -85,9 +85,14 @@ const HeroSection = () => {
               hover:scale-[1.03] transition-all"
               asChild
             >
-              <a href="/resume.pdf" download>
-                Download Resume 📄
-              </a>
+              <a
+  href="/resume.pdf"
+  download="D_Yathin_UIUX_Resume.pdf"
+  className="bg-portfolio-accent text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
+>
+  Download Resume
+</a>
+              
             </Button>
           </div>
 
